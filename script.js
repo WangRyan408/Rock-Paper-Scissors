@@ -47,7 +47,7 @@ function playRound(playerSelection, computerSelection) {
 };
 
 function game() {
-    
+    //const test = 'rock';
     for (let i = 0; i < 5; i++) {
         let playerSelect = prompt("Enter Rock, Paper, or Scissors!");
         playRound(playerSelect, getComputerChoice());
@@ -65,6 +65,7 @@ function game() {
     }
     else if (computerScore == playerScore) {
         document.getElementById("results").innerHTML = `Tie Game!`;
+        return 'Tie Game!'
     }
 }
 
