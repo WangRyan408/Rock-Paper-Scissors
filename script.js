@@ -54,10 +54,6 @@ function game() {
         playRound(playerSelect, getComputerChoice());
         document.getElementById("player").innerHTML = `${playerScore}`;
         document.getElementById("computer").innerHTML = `${computerScore}`;
-
-        if (playerScore == computerScore) {
-            alert("Tie!")
-        }
     }
 
     if (playerScore > computerScore) {
