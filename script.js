@@ -44,17 +44,22 @@ function playRound(playerSelection, computerSelection) {
 };
 
 function game() {
-    let playerSelect = prompt("Enter Rock, Paper, or Scissors!");
+    
     for (let i = 0; i < 5; i++) {
+        let playerSelect = prompt("Enter Rock, Paper, or Scissors!");
         playRound(playerSelect, getComputerChoice());
+        document.getElementById("player").innerHTML = `${playerScore}`;
+        document.getElementById("computer").innerHTML = `${computerScore}`;
     }
 
     if (playerScore > computerScore) {
         document.getElementById("results").innerHTML = `You Win!`;
+        
         //return 'You Win!';
     }
     else if(computerScore > playerScore) {
         document.getElementById("results").innerHTML = `You Lose!`;
+        
         //return 'You Lose!';
     }
     else if (computerScore == playerScore) {
