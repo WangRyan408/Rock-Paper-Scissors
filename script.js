@@ -50,10 +50,15 @@ function game() {
     }
 
     if (playerScore > computerScore) {
-        return 'You Win!';
+        document.getElementById("results").innerHTML = `You Win!`;
+        //return 'You Win!';
     }
     else if(computerScore > playerScore) {
-        return 'You Lose!';
+        document.getElementById("results").innerHTML = `You Lose!`;
+        //return 'You Lose!';
+    }
+    else if (computerScore == playerScore) {
+        document.getElementById("results").innerHTML = `Tie Game!`;
     }
 }
 

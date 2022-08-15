@@ -9,7 +9,18 @@ body {
 .test {
     outline: 1px solid;
     border-radius: 20px;
-    background-color: olive;
+    background-color: #808000;
     width: 50vw;
     height: 20vh;
+    text-align: center;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
 } 
+
+#results {
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+
+}
