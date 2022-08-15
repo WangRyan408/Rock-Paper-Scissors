@@ -54,6 +54,10 @@ function game() {
         playRound(playerSelect, getComputerChoice());
         document.getElementById("player").innerHTML = `${playerScore}`;
         document.getElementById("computer").innerHTML = `${computerScore}`;
+
+        if (playerScore == computerScore) {
+            alert("Tie!")
+        }
     }
 
     if (playerScore > computerScore) {
@@ -64,11 +68,7 @@ function game() {
         document.getElementById("results").innerHTML = `You Lose!`;
         return 'You Lose!';
     }
-    else if (computerScore == playerScore) {
-        document.getElementById("results").innerHTML = `Tie Game!`;
-        //alert("Tie!");
-        return 'Tie Game!'
-    }
+    
 }
 
 
