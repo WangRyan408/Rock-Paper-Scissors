@@ -24,6 +24,7 @@ function playRound(playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
     
     if (player == computerSelection) {
+        alert("Tie!");
         return "Tie Game!"
     }
     
@@ -65,7 +66,7 @@ function game() {
     }
     else if (computerScore == playerScore) {
         document.getElementById("results").innerHTML = `Tie Game!`;
-        alert("Tie!");
+        //alert("Tie!");
         return 'Tie Game!'
     }
 }
