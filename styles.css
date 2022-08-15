@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.test {
+    outline: 1px solid;
+    border-radius: 20px;
+    background-color: olive;
+    width: 50vw;
+    height: 20vh;
+} 
