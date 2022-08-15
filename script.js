@@ -1,4 +1,7 @@
-
+/*
+I know the project objectives was to do this entirely in console,
+but its easier on my eyes to have this output onto the browser
+*/
 
 var playerScore = 0;
 var computerScore = 0;
@@ -54,13 +57,11 @@ function game() {
 
     if (playerScore > computerScore) {
         document.getElementById("results").innerHTML = `You Win!`;
-        
-        //return 'You Win!';
+        return 'You Win!';
     }
     else if(computerScore > playerScore) {
         document.getElementById("results").innerHTML = `You Lose!`;
-        
-        //return 'You Lose!';
+        return 'You Lose!';
     }
     else if (computerScore == playerScore) {
         document.getElementById("results").innerHTML = `Tie Game!`;
