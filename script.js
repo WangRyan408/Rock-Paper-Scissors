@@ -65,6 +65,7 @@ function game() {
     }
     else if (computerScore == playerScore) {
         document.getElementById("results").innerHTML = `Tie Game!`;
+        alert("Tie!");
         return 'Tie Game!'
     }
 }
