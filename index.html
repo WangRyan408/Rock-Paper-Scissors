@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors!</title>
     <link rel="stylesheet" type="text/css "href="./styles.css" />
-    <script defer src="./script.js"></script> 
+    <script src="https://kit.fontawesome.com/b9e35346a9.js" crossorigin="anonymous"></script>
+   <!-- <script defer src="./script.js"></script> -->
 </head>
 <body>
     <div class="test">
         <div id="container">
         <div id="results">Rock, Paper, Scissors!</div>
+        <div id="choices">
+            <div id="rock" class="space"><i class="fa-solid fa-hand-back-fist fa-3x"></i></div>
+            <div id="paper" class="space"><i class="fa-solid fa-hand-scissors fa-3x"></i></div>
+            <div id="scissor" class="space"><i class="fa-solid fa-hand fa-3x"></i></div>
+        </div>
         <div id="score">
             <div id="player" class="scores">0</div>
+            <div id="round_result" class="scores"></div>
             <div id="computer" class="scores">0</div>
         </div>
     </div>

@@ -5,7 +5,12 @@ but its easier on my eyes to have this output onto the browser
 
 var playerScore = 0;
 var computerScore = 0;
+var playerSelect = "";
 
+
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissor = document.querySelector('#scissor');
 
 function getComputerChoice() {
     let num = Math.random();
@@ -47,21 +52,24 @@ function playRound(playerSelection, computerSelection) {
     }
 };
 
-function game() {
+rock.addEventListener('click', () => game('rock'))
+paper.addEventListener('click', () => game('paper'))
+scissor.addEventListener('click', () => game('scissor'))
+
+function game(playerSelect) {
     //const test = 'rock';
-    for (let i = 0; i < 5; i++) {
-        let playerSelect = prompt("Enter Rock, Paper, or Scissors!");
+    while (playerScore < 5 || computerScore < 5){
         playRound(playerSelect, getComputerChoice());
         document.getElementById("player").innerHTML = `${playerScore}`;
         document.getElementById("computer").innerHTML = `${computerScore}`;
     }
 
     if (playerScore > computerScore) {
-        document.getElementById("results").innerHTML = `You Win!`;
+        document.getElementById("round_result").innerHTML = `You Win!`;
         return 'You Win!';
     }
     else if(computerScore > playerScore) {
-        document.getElementById("results").innerHTML = `You Lose!`;
+        document.getElementById("round_result").innerHTML = `You Lose!`;
         return 'You Lose!';
     }
     
@@ -70,4 +78,4 @@ function game() {
 
 
 
-console.log(game());
+//console.log(game());

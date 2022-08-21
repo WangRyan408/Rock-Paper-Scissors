@@ -42,11 +42,31 @@ body {
 
 }
 
+.scores {
+    padding: 30px 30px 30px 30px;
+    outline: 1px solid;
+    border-radius: 5px;
+}
+
+#choices {
+    display: flex;
+    flex-direction: row;
+}
+
+.space {
+    padding: 30px 30px 30px 30px;
+    outline: 1px solid;
+}
+
+
+#round_result {
+    outline: none;
+}
 
 #player {
-    margin-right: 25px;
+    margin-right: 50px;
 }
 
 #computer {
-    margin-left : 25px;
+    margin-left : 50px;
 }
