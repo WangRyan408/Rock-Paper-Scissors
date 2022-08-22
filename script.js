@@ -52,17 +52,18 @@ function playRound(playerSelection, computerSelection) {
     }
 };
 
-rock.addEventListener('click', () => game('rock'));
-paper.addEventListener('click', () => game('paper'));
-scissor.addEventListener('click', () => game('scissors'));
+
+
 
 function game(playerSelect) {
     //const test = 'rock';
+   
         playRound(playerSelect, getComputerChoice());
         document.getElementById("player").textContent = `${playerScore}`;
         document.getElementById("computer").textContent = `${computerScore}`;
     
     if (playerScore == 5 || computerScore == 5){
+        
         if (playerScore > computerScore) {
             document.getElementById("round_result").textContent = `You Win!`;
             return 'You Win!';
@@ -75,7 +76,14 @@ function game(playerSelect) {
     
 }
 
+rock.addEventListener('click', () => game('rock'));
+paper.addEventListener('click', () => game('paper'));
+scissor.addEventListener('click', () => game('scissors'));
 
+
+    rock.removeEventListener('click', () => game('rock'));
+    paper.removeEventListener('click', () => game('paper'));
+    scissor.removeEventListener('click', () => game('scissors'));
 
 
 //console.log(game());
