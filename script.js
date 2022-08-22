@@ -11,6 +11,11 @@ var playerSelect = "";
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissor = document.querySelector('#scissor');
+const btn = document.getElementsByClassName('space');
+
+
+
+
 
 function getComputerChoice() {
     let num = Math.random();
@@ -55,15 +60,43 @@ function playRound(playerSelection, computerSelection) {
 
 
 
+function replay() {
+    document.getElementById("round_result").textContent = ``;
+    document.getElementById("player").textContent = `0`;
+    document.getElementById("computer").textContent = `0`;
+    document.getElementById('playAgain').remove();
+    playerScore = 0;
+    computerScore = 0;
+    //button.removeEventListener('click', () => replay());
+
+}
+
+
 function game(playerSelect) {
     //const test = 'rock';
-   
-        playRound(playerSelect, getComputerChoice());
-        document.getElementById("player").textContent = `${playerScore}`;
-        document.getElementById("computer").textContent = `${computerScore}`;
-    
     if (playerScore == 5 || computerScore == 5){
-        
+        btn.disabled = true;
+        rock.removeEventListener('click', () => game('rock'));
+        paper.removeEventListener('click', () => game('paper'));
+        scissor.removeEventListener('click', () => game('scissors'));
+
+
+        if (document.getElementById('playAgain') == null) {
+            let play = document.getElementById('play');
+            let butt = document.createElement("button");
+            play.appendChild(butt);
+            butt.setAttribute('type', "button");
+            butt.setAttribute('id', 'playAgain');
+            const buttonText = document.getElementById('playAgain').textContent = "Play Again?";
+            const button = document.querySelector('#playAgain');
+            button.addEventListener('click', () => replay());
+        }
+       
+        if (document.getElementById('playAgain')) {
+            const button = document.querySelector('#playAgain');
+            button.addEventListener('click', () => replay());
+        }
+
         if (playerScore > computerScore) {
             document.getElementById("round_result").textContent = `You Win!`;
             return 'You Win!';
@@ -72,18 +105,53 @@ function game(playerSelect) {
             document.getElementById("round_result").textContent = `You Lose!`;
             return 'You Lose!';
         }
+
+
     }
+        playRound(playerSelect, getComputerChoice());
+        document.getElementById("player").textContent = `${playerScore}`;
+        document.getElementById("computer").textContent = `${computerScore}`;
     
+    if (playerScore == 5 || computerScore == 5){
+        btn.disabled = true;
+        rock.removeEventListener('click', () => game('rock'));
+        paper.removeEventListener('click', () => game('paper'));
+        scissor.removeEventListener('click', () => game('scissors'));
+
+        
+        if (document.getElementById('playAgain') == null) {
+            let play = document.getElementById('play');
+            let butt = document.createElement("button");
+            play.appendChild(butt);
+            butt.setAttribute('type', "button");
+            butt.setAttribute('id', 'playAgain');
+            const buttonText = document.getElementById('playAgain').textContent = "Play Again?";
+        }
+
+        if (document.getElementById('playAgain')) {
+            const button = document.querySelector('#playAgain');
+            button.addEventListener('click', () => replay());
+        }
+
+        if (playerScore > computerScore) {
+            document.getElementById("round_result").textContent = `You Win!`;
+            return 'You Win!';
+        }
+        else if(computerScore > playerScore) {
+            document.getElementById("round_result").textContent = `You Lose!`;
+            return 'You Lose!';
+        }
+
+
+    }
+    //event.stopPropagation();
 }
 
 rock.addEventListener('click', () => game('rock'));
 paper.addEventListener('click', () => game('paper'));
 scissor.addEventListener('click', () => game('scissors'));
 
-
-    rock.removeEventListener('click', () => game('rock'));
-    paper.removeEventListener('click', () => game('paper'));
-    scissor.removeEventListener('click', () => game('scissors'));
+    
 
 
 //console.log(game());
