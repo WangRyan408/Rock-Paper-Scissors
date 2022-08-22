@@ -39,7 +39,7 @@ function playRound(playerSelection, computerSelection) {
         (player === 'paper' && computerSelection === 'rock')
       ) {
         playerScore++;
-        return `You Win! ${player} beats ${computerSelection}`
+        //return `You Win! ${player} beats ${computerSelection}`
       }
 
     if (
@@ -48,29 +48,29 @@ function playRound(playerSelection, computerSelection) {
     (computerSelection === 'paper' && player === 'rock')
     ) {
         computerScore++;
-        return `You Win! ${computerSelection} beats ${player}`
+       // return `You Win! ${computerSelection} beats ${player}`
     }
 };
 
-rock.addEventListener('click', () => game('rock'))
-paper.addEventListener('click', () => game('paper'))
-scissor.addEventListener('click', () => game('scissor'))
+rock.addEventListener('click', () => game('rock'));
+paper.addEventListener('click', () => game('paper'));
+scissor.addEventListener('click', () => game('scissors'));
 
 function game(playerSelect) {
     //const test = 'rock';
-    while (playerScore < 5 || computerScore < 5){
         playRound(playerSelect, getComputerChoice());
-        document.getElementById("player").innerHTML = `${playerScore}`;
-        document.getElementById("computer").innerHTML = `${computerScore}`;
-    }
-
-    if (playerScore > computerScore) {
-        document.getElementById("round_result").innerHTML = `You Win!`;
-        return 'You Win!';
-    }
-    else if(computerScore > playerScore) {
-        document.getElementById("round_result").innerHTML = `You Lose!`;
-        return 'You Lose!';
+        document.getElementById("player").textContent = `${playerScore}`;
+        document.getElementById("computer").textContent = `${computerScore}`;
+    
+    if (playerScore == 5 || computerScore == 5){
+        if (playerScore > computerScore) {
+            document.getElementById("round_result").textContent = `You Win!`;
+            return 'You Win!';
+        }
+        else if(computerScore > playerScore) {
+            document.getElementById("round_result").textContent = `You Lose!`;
+            return 'You Lose!';
+        }
     }
     
 }
