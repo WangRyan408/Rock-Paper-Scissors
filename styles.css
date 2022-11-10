@@ -25,7 +25,8 @@ body {
     border-radius: 20px;
     background-color: #808000;
     width: 100vw;
-    height: 30vh;
+    height: 30vh;   
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -65,6 +66,7 @@ body {
 #choices {
     display: flex;
     flex-direction: row;
+    
 }
 
 .space {
