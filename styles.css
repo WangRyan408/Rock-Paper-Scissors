@@ -24,13 +24,14 @@ body {
     outline: 1px solid;
     border-radius: 20px;
     background-color: #808000;
-    width: 100vw;
-    height: 30vh;   
+    min-width: 100vw;
+    min-height: 30vh;   
     flex-wrap: wrap;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    
 } 
 
 #container {
