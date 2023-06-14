@@ -53,9 +53,9 @@ body {
 #score {
     margin-top: 15px;
     display: flex;
-   
     align-items: center;
-
+    text-align: center;
+    
 }
 
 .scores {
